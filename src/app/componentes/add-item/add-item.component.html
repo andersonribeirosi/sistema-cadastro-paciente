@@ -1,0 +1,97 @@
+<!-- <div class="tabbable tabs-left">
+  <ul class="nav nav-tabs" id="abas">
+      <li class="active" id="aba_cadastro_paciente"><a href="index.html" data-toggle="tab"><i class="icon-plus"></i> Cadastrar Pacientes</a></li>
+      <li id="aba_listagem_paciente"><a [routerLink]="['/listagem']" data-toggle="tab"><i class="icon-list-alt"></i> Listar Pacientes</a></li>
+  </ul>
+</div> -->
+
+<app-navbar></app-navbar>
+<div class="card">
+  <div class="card-content">
+    <span class="card-title">
+      <strong>Dados do Paciente</strong>
+    </span>
+    <form (ngSubmit)="onSubmit()" class="col s6">
+      <div class="row">
+        <div class="input-field col s6">
+          <input type="text" placeholder="Nome completo" [(ngModel)]="item.nome" name="nome" required>
+        </div>
+
+        <div class="input-field col s6">
+          <input type="text" placeholder="CPF" [(ngModel)]="item.cpf" name="cpf">
+        </div>
+
+        <div class="input-field col s6">
+          <input type="text" placeholder="Nome da Mãe" [(ngModel)]="item.nomeDaMae" name="nomeDaMae">
+        </div>
+
+        <div class="input-field col s3">
+          <input type="text" placeholder="Data de Nascimento" [(ngModel)]="item.dataDeNascimento" name="dataDeNascimento">
+        </div>
+
+        <div class="input-field col s3">
+          <input type="text" placeholder="Sexo" [(ngModel)]="item.sexo" name="sexo">
+        </div>
+
+        <div class="input-field col s8">
+          <input type="text" placeholder="Rua" [(ngModel)]="item.rua" name="rua">
+        </div>
+
+        <div class="input-field col s4">
+          <input type="text" placeholder="Cidade" [(ngModel)]="item.cidade" name="cidade">
+        </div>
+
+
+        <div class="input-field col s5">
+          <input type="text" placeholder="Bairro" [(ngModel)]="item.bairro" name="bairro">
+        </div>
+
+        <div class="input-field col s4">
+          <input type="text" placeholder="Estado" [(ngModel)]="item.estado" name="estado">
+        </div>
+
+        <div class="input-field col s3">
+          <input type="text" placeholder="Status" [(ngModel)]="item.emEspera" name="emEspera">
+        </div>
+
+      </div>
+
+      <!-- parte dois -->
+      <span class="card-title">
+        <strong>Dados Clínicos</strong>
+      </span>
+      <div class="row">
+        <div class="input-field col s6">
+          <input type="text" placeholder="Data de Atendimento" [(ngModel)]="item.dataAtendimento" name="dataAtendimento" required>
+        </div>
+        <div class="input-field col s6">
+          <input type="text" placeholder="Sintomas" [(ngModel)]="item.sintomas" name="sintomas">
+        </div>
+
+        <div class="input-field col s6">
+          <input type="text" placeholder="Doenças" [(ngModel)]="item.doencas" name="doencas">
+        </div>
+
+        <div class="input-field col s6">
+          <input type="text" placeholder="Hipertenso" [(ngModel)]="item.hipertenso" name="hipertenso">
+        </div>
+
+        <div class="input-field col s4 ">
+          <input type="text" placeholder="Alérgico" [(ngModel)]="item.alergico" name="alergico">
+        </div>
+
+        <div class="input-field col s4">
+          <input type="text" placeholder="Diabetes" [(ngModel)]="item.diabetes" name="diabetes">
+        </div>
+
+        <div class="input-field col s4">
+          <input type="text" placeholder="Prescrição" [(ngModel)]="item.prescricao" name="prescricao">
+        </div>
+
+      </div>
+      <input type="submit" value="Cadastrar Paciente" class="btn">
+    </form>
+  </div>
+</div>
+
+<app-footer></app-footer>

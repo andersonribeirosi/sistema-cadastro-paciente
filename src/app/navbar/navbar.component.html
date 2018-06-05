@@ -1,0 +1,41 @@
+<!-- NavBar Menu -->
+  <nav class="navbar navbar-inverse">
+    <div id="navbar" class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a [routerLink]="['/pagina-inicial']">
+              <span class="glyphicon glyphicon-home"></span>&nbsp; Home</a>
+          </li>
+          <li>
+            <a [routerLink]="['/cadastro-paciente']">
+              <span class="glyphicon glyphicon-plus-sign"></span>&nbsp; Cadastro de Pacientes</a>
+          </li>
+          <li>
+            <a [routerLink]="['/lista-paciente']">
+              <span class="glyphicon glyphicon-credit-card"></span>&nbsp; Lista de Pacientes</a>
+          </li>
+          
+        </ul>
+
+        <ul class="nav navbar-nav navbar-left">
+          <li>
+             <button style="background-color:rgb(243, 105, 13)"[routerLink]="['/login-app']" class="btn btn-lg">Sair</button>
+          </li>
+        </ul>
+
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script> -->

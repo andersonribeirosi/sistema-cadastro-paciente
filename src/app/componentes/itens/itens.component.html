@@ -1,0 +1,56 @@
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+<app-navbar></app-navbar>
+
+<div *ngIf="itens?.length > 0; else noItens">
+  <strong><h3 style="text-align: center;padding-top:20px;">Pacientes Cadastrados</h3></strong>
+  <br>
+  <ul *ngFor="let item of itens" class="collection">
+    <li class="collection-item">
+      <strong style="color:midnightblue">Paciente: </strong>{{item.nome}}
+      <br>
+      <strong style="color:midnightblue">CPF: </strong> {{item.cpf}}
+      <br>
+      <strong style="color:midnightblue">Nome da Mãe: </strong> {{item.nomeDaMae}}
+      <br>
+      <strong style="color:midnightblue">Status: </strong> {{item.emEspera}}
+      <a routerLink="['/navbar']" class="secondary-content">
+        <i (click)="editItem($event, item)" class="fa fa-pencil"></i>
+        <i *ngIf="editEstado && itemEdit.id == item.id" (click)="limparEstado()" class="fa fa-compress"></i>
+      </a>
+
+      <div *ngIf="editEstado && itemEdit.id == item.id">
+        <form (ngSubmit)="updateItem(item)">
+
+          <div class="row">
+            <div class="input-field col s6">
+              <input type="text" placeholder="Nome Completo" [(ngModel)]="item.nome" name="nome">
+            </div>
+            <div class="input-field col s4">
+              <input type="text" placeholder="CPF" [(ngModel)]="item.cpf" name="cpf">
+            </div>
+            <div class="input-field col s2">
+                <input type="text" placeholder="CPF" [(ngModel)]="item.emEspera" name="emEspera">
+              </div>
+
+            <input type="submit" value="Atualizar" class="btn orange">
+            <button (click)="deleteItem($event, item)" class="btn red">Remover</button>
+
+          </div>
+
+        </form>
+      </div>
+
+    </li>
+
+  </ul>
+</div>
+
+<ng-template #noItens>
+  <hr>
+  <h3 style="text-align:center;">
+    <strong>Lista de Pacientes Vazia</strong>
+  </h3>
+</ng-template>
+<script src="/js/jspdf.js"></script>
+<script src="/js/jquery-2.1.3.js"></script>
+<script src="/js/pdfFromHTML.js"></script>
